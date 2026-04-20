@@ -204,23 +204,44 @@ static void DrawInstructionsScreen(void){
   ST7735_FillScreen(0x0000);
 
   ST7735_SetCursor(0,1);
-  ST7735_OutString("INSTRUCTIONS");
+  if(Language == LANG_EN){
+    ST7735_OutString("INSTRUCTIONS");
 
-  ST7735_SetCursor(0,4);
-  ST7735_OutString("Yellow soup = 20");
-  ST7735_SetCursor(0,6);
-  ST7735_OutString("Purple soup = 10");
+    ST7735_SetCursor(0,4);
+    ST7735_OutString("Yellow soup = 20");
+    ST7735_SetCursor(0,6);
+    ST7735_OutString("Purple soup = 10");
 
-  ST7735_SetCursor(0,8);
-  ST7735_OutString("Wash all items");
-  ST7735_SetCursor(0,9);
-  ST7735_OutString("or pot resets.");
+    ST7735_SetCursor(0,8);
+    ST7735_OutString("Wash all items");
+    ST7735_SetCursor(0,9);
+    ST7735_OutString("or pot resets.");
 
-  ST7735_SetCursor(0,11);
-  ST7735_OutString("R = Recipes");
+    ST7735_SetCursor(0,11);
+    ST7735_OutString("R = Recipes");
 
-  ST7735_SetCursor(0,15);
-  ST7735_OutString("Black: start");
+    ST7735_SetCursor(0,15);
+    ST7735_OutString("Black: start");
+  }else{
+    ST7735_OutString("INSTRUCCIONES");
+    
+    ST7735_SetCursor(0,4);
+    ST7735_OutString("Sopa amarilla=20");
+    ST7735_SetCursor(0,6);
+    ST7735_OutString("Sopa morada=10");
+
+    ST7735_SetCursor(0,8);
+    ST7735_OutString("Lava todo o se");
+    ST7735_SetCursor(0,9);
+    ST7735_OutString("resetea la olla.");
+
+    ST7735_SetCursor(0,11);
+    ST7735_OutString("R = Recetas");
+
+    ST7735_SetCursor(0,15);
+    ST7735_OutString("Negro: empezar");
+
+  }
 }
 
 static void DrawRecipeTile(int col, int row){
@@ -504,7 +525,7 @@ static void AddHeldToPot(void){
     ClearPot();
     HeldItem = ITEM_NONE;
     HeldWashed = 0;
-    RedrawCell(5,2);
+    RedrawCell(7,1);
     DrawChef();
     DrawHeldItem();
     DrawHUD();
@@ -551,7 +572,7 @@ static void CollectPotSoup(void){
   PotReadyPoints = 0;
   ClearPot();
 
-  RedrawCell(5,2);
+  RedrawCell(7,1);
   DrawChef();
   DrawHeldItem();
   DrawHUD();
@@ -808,6 +829,7 @@ static void ResetGame(void){
 }
 
 void Game_Init(void){
+  __disable_irq();
   Clock_Init80MHz(0);
   LaunchPad_Init();
   ST7735_InitR(INITR_BLACKTAB);
