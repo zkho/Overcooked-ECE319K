@@ -204,44 +204,28 @@ static void DrawInstructionsScreen(void){
   ST7735_FillScreen(0x0000);
 
   ST7735_SetCursor(0,1);
-  if(Language == LANG_EN){
-    ST7735_OutString("INSTRUCTIONS");
+  ST7735_OutString("INSTR.");
 
-    ST7735_SetCursor(0,4);
-    ST7735_OutString("Yellow soup = 20");
-    ST7735_SetCursor(0,6);
-    ST7735_OutString("Purple soup = 10");
+  // yellow pot = 20
+  DrawSpriteTransparent(0, 24, aaa_yellowpot_16x16, 16, 16);
+  ST7735_SetCursor(3,3);
+  ST7735_OutString("=20");
 
-    ST7735_SetCursor(0,8);
-    ST7735_OutString("Wash all items");
-    ST7735_SetCursor(0,9);
-    ST7735_OutString("or pot resets.");
+  // purple pot = 10
+  DrawSpriteTransparent(0, 54, aaa_purplepot_16x16, 16, 16);
+  ST7735_SetCursor(3,6);
+  ST7735_OutString("=10");
 
-    ST7735_SetCursor(0,11);
-    ST7735_OutString("R = Recipes");
+  // washing rule
+  ST7735_SetCursor(0,9);
+  ST7735_OutString("no wash/sin lavado");
+  ST7735_SetCursor(0,11);
+  ST7735_OutString("->pot reset/reinicia");
 
-    ST7735_SetCursor(0,15);
-    ST7735_OutString("Black: start");
-  }else{
-    ST7735_OutString("INSTRUCCIONES");
-    
-    ST7735_SetCursor(0,4);
-    ST7735_OutString("Sopa amarilla=20");
-    ST7735_SetCursor(0,6);
-    ST7735_OutString("Sopa morada=10");
 
-    ST7735_SetCursor(0,8);
-    ST7735_OutString("Lava todo o se");
-    ST7735_SetCursor(0,9);
-    ST7735_OutString("resetea la olla.");
-
-    ST7735_SetCursor(0,11);
-    ST7735_OutString("R = Recetas");
-
-    ST7735_SetCursor(0,15);
-    ST7735_OutString("Negro: empezar");
-
-  }
+  // start
+  ST7735_SetCursor(0,15);
+  ST7735_OutString("B:start");
 }
 
 static void DrawRecipeTile(int col, int row){
@@ -558,7 +542,7 @@ static void AddHeldToPot(void){
     Sound_Complete();
   }
 
-  RedrawCell(5,2);
+  RedrawCell(7,1);
   DrawChef();
   DrawHeldItem();
   DrawHUD();
