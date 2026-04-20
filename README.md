@@ -1,6 +1,6 @@
 # Overcooked-ECE319K
 
-**Qasim Bawa and I made Overcooked on the MSPM0!**
+**Qasim Bawa and I made Overcooked on the MSPM0+ microcontroller!**
 
 Overcooked is a simple, interactive cooking game where the player controls a chef character using a joystick and buttons to collect and prepare ingredients and use them to make soup. The goal is to gather the correct ingredients and prepare them properly before the time runs out. Points are earned by preparing soups. The game features two types of soups, each requiring a unique set of ingredients! The player moves around the screen to pick up one of several possible ingredients. Some require preparation, such as cutting, cleaning, etc., and once all are prepared correctly, the soup is completed and added to the player's scorecard. The challenge comes from time pressure, ingredient order, and efficient movement.
 
