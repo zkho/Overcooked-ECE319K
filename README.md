@@ -58,20 +58,24 @@ The project integrates multiple embedded systems concepts including ADC-based jo
 
 ## Files
 
-- `main.c`
-- `game.c`
-- `game.h`
-- `ADC1.c`
-- `ADC1.h`
-- `Sound.c`
-- `Sound.h`
-- `Switch.c`
-- `Switch.h`
-- `DAC.c`
-- `DAC.h`
-- `Timer.c`
-- `images.h`
-- `sounds.h`
+```
+Overcooked-ECE319K/
+├── src/                 Game code
+│   ├── main.c           Program entry point
+│   ├── game.c / game.h  Game logic, rendering, controller FSM
+│   ├── Sound.c / .h     DAC sound playback (SysTick)
+│   ├── Switch.c / .h    GPIO button input
+│   ├── images/images.h  Sprite and tile bitmaps
+│   └── sounds/sounds.h  Sampled audio data
+├── inc/                 Hardware drivers and libraries
+│   ├── ADC1.c / .h      Joystick ADC input
+│   ├── DAC.c / .h       DAC output
+│   ├── Clock, LaunchPad, SPI, Timer (.c / .h)
+│   └── ST7735, SmallFont (.c / .h)   LCD driver and font
+├── config/              Linker script and startup file (MSPM0G3507)
+├── LICENSE
+└── README.md
+```
 
 ## Tools
 
