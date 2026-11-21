@@ -10,13 +10,13 @@ https://www.youtube.com/watch?v=sAzIugYzNG0
 
 Our version of a cooking game challenges the player to control a chef using a joystick and buttons to collect, prepare, and combine ingredients into soups before time runs out. Players must move efficiently, complete the correct preparation steps, and maximize score through fast decision-making and route planning.
 
-The project integrates multiple embedded systems concepts including ADC-based joystick input, GPIO buttons, SPI LCD graphics, DAC sound playback, interrupts, finite state machine control, and bilingual menu support.
+The project integrates multiple embedded systems concepts, including ADC-based joystick input, GPIO buttons, SPI LCD graphics, DAC sound playback, interrupts, finite state machine control, and bilingual menu support.
 
 ## Features
 
 - Joystick-controlled chef movement
 - Tile-based collision and object interaction
-- Ingredient pickup / washing / chopping mechanics
+- Ingredient pickup/washing/chopping mechanics
 - Recipe-based scoring system
 - Sound effects using DAC + SysTick interrupt
 - Two-language support (English / Spanish)
